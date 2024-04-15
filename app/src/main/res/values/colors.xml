@@ -297,12 +297,12 @@
     <color name="md_blue_grey_700">#455A64</color>
     <color name="md_blue_grey_800">#37474F</color>
 
-    <color name="white_smoke">#263238</color>
-    <color name="spun_pearl">#263238</color>
+    <color name="spun_pearl">#A8A8A9</color>
+    <color name="white_smoke">#F3F3F3</color>
 
     <color name="dashboard_bg">#212121</color>
     <color name="dashboard_second_bg">#424242</color>
     <color name="dashboard_text_circle_bg">#37474F</color>
 
-    <color name="transparent">#00FFFFFF</color>
+    <color name="login_button_color">#3EA3DC</color>
 </resources>

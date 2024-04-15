@@ -25,6 +25,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:elevation="0dp"
+            app:contentInsetLeft="0dp"
+            app:contentInsetStart="0dp"
+            app:titleCentered="true"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -32,7 +35,9 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+
+                >
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/goBack"
@@ -50,7 +55,7 @@
                     android:id="@+id/title"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
-                    android:gravity="center"
+                    android:gravity="start|center"
                     android:text="Leave Details"
                     android:textSize="18dp"
                     android:textStyle="bold"
@@ -63,210 +68,256 @@
         </com.google.android.material.appbar.MaterialToolbar>
 
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textTitle"
+        <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:clipToPadding="false"
-            android:hint="Title"
-            android:padding="8dp"
-            android:visibility="visible"
-            app:boxBackgroundMode="outline"
-            app:boxStrokeWidth="1dp"
-            app:hintEnabled="true"
-            app:hintTextColor="@color/md_grey_500"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/toolBar">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etTitle"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="text"
-                android:text="Test" />
+                android:layout_height="match_parent">
 
-        </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:clipToPadding="false"
+                    android:hint="Title"
+                    android:padding="8dp"
+                    android:visibility="visible"
+                    app:boxBackgroundMode="outline"
+                    app:boxStrokeColor="@color/login_button_color"
+                    app:boxStrokeWidth="1dp"
+                    app:hintEnabled="true"
+                    app:hintTextColor="@color/md_grey_500"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
 
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:text="@={viewModel.title}"
+                        android:textCursorDrawable="@drawable/custom_cursor" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/leaveType"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:clipToPadding="false"
-            android:hint="Leave Type"
-            android:padding="8dp"
-            app:boxBackgroundMode="outline"
-            app:boxStrokeWidth="1dp"
-            app:hintEnabled="true"
-            app:hintTextColor="@color/md_grey_500"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textTitle">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etLeaveTitle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="text" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/contactNumber"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:clipToPadding="false"
-            android:hint="Contact Number"
-            android:padding="8dp"
-            app:boxBackgroundMode="outline"
-            app:boxStrokeWidth="1dp"
-            app:hintEnabled="true"
-            app:hintTextColor="@color/md_grey_500"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/leaveType">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etContactNumber"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="number" />
-
-        </com.google.android.material.textfield.TextInputLayout>
+                </com.google.android.material.textfield.TextInputLayout>
 
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/startDate"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:clipToPadding="false"
-            android:hint="Start Date"
-            android:padding="8dp"
-            app:boxBackgroundMode="outline"
-            app:boxStrokeWidth="1dp"
-            app:endIconDrawable="@drawable/ic_calendar"
-            app:endIconMode="custom"
-            app:hintEnabled="true"
-            app:hintTextColor="@color/md_grey_500"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/contactNumber">
+                <!--
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/leaveType"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:clipToPadding="false"
+                            android:hint="Leave Type"
+                            android:padding="8dp"
+                            app:boxBackgroundMode="outline"
+                            app:boxStrokeWidth="1dp"
+                            app:hintEnabled="true"
+                            app:hintTextColor="@color/md_grey_500"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/textTitle">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etApplied"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="text"
-                android:text="@={viewModel.date}"
-                android:focusable="false"
-                android:onClick="@{()->activity.openCalender(`start`)}"
-                />
-
-        </com.google.android.material.textfield.TextInputLayout>
+                         &lt;!&ndash;   <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/etLeaveTitle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="text" />&ndash;&gt;
 
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/endDate"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:clipToPadding="false"
-            android:hint="End Date"
-            android:padding="8dp"
-            app:boxBackgroundMode="outline"
-            app:boxStrokeWidth="1dp"
-            app:endIconDrawable="@drawable/ic_calendar"
-            app:endIconMode="custom"
-            app:hintEnabled="true"
-            app:hintTextColor="@color/md_grey_500"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/startDate">
+                            <AutoCompleteTextView
+                                android:id="@+id/autoCompleteTextView"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="textAutoComplete"
+                                android:imeOptions="actionDone"
+                                android:maxLines="1" />
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etStatus"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="text"
-                android:text="@={viewModel.endDate}"
-                android:onClick="@{()->activity.openCalender(`end`)}"
-                android:focusable="false"
-
-                />
-
-        </com.google.android.material.textfield.TextInputLayout>
+                        </com.google.android.material.textfield.TextInputLayout>
+                -->
 
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/reason"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:clipToPadding="false"
-            android:hint="Approved By"
-            android:padding="8dp"
-            app:boxBackgroundMode="outline"
-            app:boxStrokeWidth="1dp"
-            app:hintEnabled="true"
-            app:hintTextColor="@color/md_grey_500"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/endDate">
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/leaveType"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:hint="Select Type of Leave"
+                    android:padding="8dp"
+                    app:hintTextColor="@color/md_grey_500"
+                    app:boxStrokeColor="@color/login_button_color"
+                    app:endIconMode="dropdown_menu"
+                    app:endIconTint="@color/black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textTitle">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etApprovedBy"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="text" />
+                    <AutoCompleteTextView
+                        android:id="@+id/autoCompleteTextView"
+                        style="@style/SpinnerStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:imeOptions="actionDone"
+                        android:inputType="textAutoComplete"
+                        android:maxLines="1"
+                        android:textCursorDrawable="@drawable/custom_cursor" />
+                </com.google.android.material.textfield.TextInputLayout>
 
-        </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/contactNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:clipToPadding="false"
+                    android:hint="Contact Number"
+                    android:padding="8dp"
+                    app:boxBackgroundMode="outline"
+                    app:boxStrokeColor="@color/login_button_color"
+                    app:boxStrokeWidth="1dp"
+                    app:counterEnabled="true"
+                    app:counterMaxLength="10"
+                    app:hintEnabled="true"
+                    app:hintTextColor="@color/md_grey_500"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/leaveType">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etContactNumber"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:text="@={viewModel.phoneNumber}"
+                        android:textCursorDrawable="@drawable/custom_cursor" />
+
+                </com.google.android.material.textfield.TextInputLayout>
 
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/button1"
-            android:layout_width="0dp"
-            android:layout_height="60dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="8dp"
-            android:text="Reject"
-            app:backgroundTint="@color/md_red_300"
-            app:cornerRadius="8dp"
-            app:icon="@drawable/ic_cancel_clsoe"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/guideline"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/reason" />
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/startDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:clipToPadding="false"
+                    android:hint="Start Date"
+                    android:padding="8dp"
+                    app:boxBackgroundMode="outline"
+                    app:boxStrokeColor="@color/login_button_color"
+                    app:boxStrokeWidth="1dp"
+                    app:endIconDrawable="@drawable/ic_calendar"
+                    app:endIconMode="custom"
+                    app:hintEnabled="true"
+                    app:hintTextColor="@color/md_grey_500"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/contactNumber">
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/button2"
-            android:layout_width="0dp"
-            android:layout_height="60dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="8dp"
-            android:text="Accept"
-            app:backgroundTint="@color/md_green_300"
-            app:cornerRadius="8dp"
-            app:icon="@drawable/ic__circle_check_right"
-            app:iconPadding="8dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/guideline"
-            app:layout_constraintTop_toBottomOf="@+id/reason" />
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etApplied"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:focusable="false"
+                        android:inputType="text"
+                        android:onClick="@{()->activity.openCalender(`start`)}"
+                        android:text="@={viewModel.date}" />
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.5" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/endDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:clipToPadding="false"
+                    android:hint="End Date"
+                    android:padding="8dp"
+                    app:boxBackgroundMode="outline"
+                    app:boxStrokeColor="@color/login_button_color"
+                    app:boxStrokeWidth="1dp"
+                    app:endIconDrawable="@drawable/ic_calendar"
+                    app:endIconMode="custom"
+                    app:hintEnabled="true"
+                    app:hintTextColor="@color/md_grey_500"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/startDate">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etStatus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:focusable="false"
+                        android:inputType="text"
+                        android:onClick="@{()->activity.openCalender(`end`)}"
+                        android:text="@={viewModel.endDate}"
+                        android:textCursorDrawable="@drawable/custom_cursor"
+
+                        />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/reason"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:clipToPadding="false"
+                    android:hint="Reason for Leave"
+                    android:padding="8dp"
+
+                    app:boxBackgroundMode="outline"
+                    app:boxStrokeColor="@color/login_button_color"
+                    app:boxStrokeWidth="1dp"
+                    app:counterEnabled="true"
+                    app:counterMaxLength="250"
+                    app:hintEnabled="true"
+                    app:hintTextColor="@color/md_grey_500"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/endDate">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etApprovedBy"
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:gravity="start"
+                        android:inputType="text"
+                        android:maxLines="5"
+                        android:minLines="3"
+                        android:text="@={viewModel.reason}"
+                        android:textCursorDrawable="@drawable/custom_cursor" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/applyLeave"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_margin="16dp"
+                    android:backgroundTint="@color/login_button_color"
+                    android:onClick="@{()->activity.onApplyLeaveClick()}"
+                    android:text="Apply Leave"
+                    app:cornerRadius="8dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/reason" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
