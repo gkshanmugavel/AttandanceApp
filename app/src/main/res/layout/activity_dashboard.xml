@@ -94,10 +94,18 @@
                 android:layout_height="match_parent"
                 android:layout_margin="@dimen/dimen_16">
 
-                <View
+                <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/viewCalnderView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="80dp" />
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dimen_12"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:itemCount="5"
+                    tools:listitem="@layout/row_calendar_date" />
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnPunchInOut"
