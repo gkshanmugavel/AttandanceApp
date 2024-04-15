@@ -168,4 +168,35 @@ class LeaveDetailsActivity : AppCompatActivity() {
 
     }
 
+    fun onApplyLeaveClick() {
+        if (viewModel.title.value.isNullOrEmpty()) {
+            showToast(this,"Title should not be empty")
+            return
+        }
+        if(binding.autoCompleteTextView.text.isNullOrEmpty()){
+            showToast(this,"Leave type should not be empty")
+            return
+        }
+        if(viewModel.phoneNumber.value.isNullOrEmpty()){
+            showToast(this,"Phone number should not be empty")
+            return
+        }
+        if(viewModel.date.value.isNullOrEmpty()){
+            showToast(this,"Start date should not be empty")
+            return
+        }
+        if(viewModel.endDate.value.isNullOrEmpty()){
+            showToast(this,"End date should not be empty")
+            return
+        }
+
+        if(viewModel.reason.value.isNullOrEmpty()){
+            showToast(this,"Reason should not be empty")
+            return
+        }
+        showToast(this,"Leave applied successfully")
+
+
+
+    }
 }
