@@ -7,9 +7,9 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.attendanceapplication.DashboardActivity
 import com.example.attendanceapplication.R
 import com.example.attendanceapplication.databinding.ActivityLoginBinding
+import com.example.attendanceapplication.ui.dashoard.DashboardActivity
 import com.example.attendanceapplication.utils.AppUtils.showToast
 import dagger.hilt.android.AndroidEntryPoint
 
