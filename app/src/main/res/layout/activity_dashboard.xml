@@ -282,6 +282,9 @@
                             android:layout_height="match_parent"
                             android:padding="@dimen/dimen_8">
 
+
+
+
                             <com.google.android.material.textview.MaterialTextView
                                 android:id="@+id/tvCheckOutLabel"
                                 android:layout_width="wrap_content"
