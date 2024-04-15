@@ -1,4 +1,4 @@
-package com.example.attendanceapplication
+package com.example.attendanceapplication.ui.dashoard
 
 import android.annotation.SuppressLint
 import android.app.DatePickerDialog
@@ -11,6 +11,7 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.paging.PagingData
 import androidx.recyclerview.widget.LinearSnapHelper
 import androidx.recyclerview.widget.SnapHelper
+import com.example.attendanceapplication.R
 import com.example.attendanceapplication.adapter.DateSelectionAdapter
 import com.example.attendanceapplication.databinding.ActivityDashboardBinding
 import com.example.attendanceapplication.utils.DateDetailsUI
@@ -49,9 +50,9 @@ class DashboardActivity : AppCompatActivity() {
             setSelectedDate(dateDetailsUI)
         }
 
-      /*  binding.btnPickDate.setOnClickListener {
-            selectDateFromDatePickerDialog(mainViewModel.selectedDate.value!!)
-        }*/
+        /*  binding.btnPickDate.setOnClickListener {
+              selectDateFromDatePickerDialog(mainViewModel.selectedDate.value!!)
+          }*/
 
         val rvDates = binding.viewCalnderView
         val snapHelper: SnapHelper = LinearSnapHelper()
@@ -79,11 +80,11 @@ class DashboardActivity : AppCompatActivity() {
 
     @SuppressLint("SetTextI18n")
     private fun setSelectedDate(dateDetailsUI: DateDetailsUI) {
-       /* binding.txtSelectedDate.text = """
-                    ${dateDetailsUI.dayOfWeek}
-                    ${dateDetailsUI.day} ${dateDetailsUI.monthName}
-                    ${dateDetailsUI.year}
-                """.trimIndent()*/
+        /* binding.txtSelectedDate.text = """
+                     ${dateDetailsUI.dayOfWeek}
+                     ${dateDetailsUI.day} ${dateDetailsUI.monthName}
+                     ${dateDetailsUI.year}
+                 """.trimIndent()*/
     }
 
     private fun selectDateFromDatePickerDialog(currentSelectedDate: String) {
