@@ -13,4 +13,28 @@
         <item name="android:textColorSecondary">@color/md_grey_500</item>
         <!-- Add more customizations as needed -->
     </style>
+
+
+    <style name="SpinnerStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+
+        <item name="boxBackgroundMode">outline</item>
+        <item name="boxBackgroundColor">@color/white_smoke</item>
+
+        <item name="boxStrokeColor">@color/black</item>
+        <item name="boxStrokeErrorColor">@color/md_red_300</item>
+        <item name="boxStrokeWidth">1dp</item>
+        <item name="boxStrokeWidthFocused">1dp</item>
+
+        <item name="errorTextColor">@color/md_red_300</item>
+        <item name="errorEnabled">true</item>
+
+        <item name="hintEnabled">true</item>
+        <item name="hintTextColor">@color/md_grey_300</item>
+        <item name="android:textColorHint">@color/md_grey_300</item>
+
+        <item name="endIconMode">clear_text</item>
+
+    </style>
 </resources>
