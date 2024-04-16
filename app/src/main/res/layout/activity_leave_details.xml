@@ -210,7 +210,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:clipToPadding="false"
-            android:hint="Approved By"
+            android:hint="Reason for Leave"
             android:padding="8dp"
             app:boxBackgroundMode="outline"
             app:boxStrokeWidth="1dp"
@@ -230,6 +230,21 @@
 
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttoon_Apply"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:text="Apply Leave"
+            app:backgroundTint="@color/md_blue_300"
+            app:cornerRadius="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/reason" />
+
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button1"
             android:layout_width="0dp"
             android:layout_height="60dp"
@@ -239,6 +254,7 @@
             android:text="Reject"
             app:backgroundTint="@color/md_red_300"
             app:cornerRadius="8dp"
+            android:visibility="gone"
             app:icon="@drawable/ic_cancel_clsoe"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/guideline"
@@ -253,6 +269,7 @@
             android:layout_marginTop="16dp"
             android:layout_marginEnd="8dp"
             android:text="Accept"
+            android:visibility="gone"
             app:backgroundTint="@color/md_green_300"
             app:cornerRadius="8dp"
             app:icon="@drawable/ic__circle_check_right"
@@ -267,6 +284,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
+            android:visibility="gone"
             app:layout_constraintGuide_percent="0.5" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

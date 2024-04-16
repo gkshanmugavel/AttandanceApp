@@ -23,6 +23,9 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".DashboardActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.approve_leave.ApproveLeaveActivity"
             android:exported="false" />
         <activity

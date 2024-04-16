@@ -1,0 +1,469 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_marginEnd="@dimen/dimen_12"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_leave_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dimen_12"
+            app:cardElevation="@dimen/dimen_8">
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="@dimen/dimen_8">
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideLine1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.50" />
+    <TextView
+        android:id="@+id/tv_leave_details_head"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Leave Details"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        ></TextView>
+
+    <!--title layout-->
+    <LinearLayout
+        android:id="@+id/ll_title_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_leave_details_head">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+
+            android:orientation="horizontal">
+    <TextView
+        android:id="@+id/tv_leavetitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Title"
+        android:textSize="12dp"
+
+        ></TextView>
+    <TextView
+        android:id="@+id/tv_leavetitle_value"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textSize="12dp"
+        android:text="Sick Leave"
+
+
+
+
+        ></TextView>
+        </LinearLayout>
+    <LinearLayout
+        android:id="@+id/line_below_leave_title"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/md_grey_500"
+        android:orientation="vertical"
+        android:layout_marginTop="10dp"
+        />
+    </LinearLayout>
+
+    <!--leave type layout-->
+    <LinearLayout
+        android:id="@+id/ll_leavetype_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ll_title_layout">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:orientation="horizontal">
+        <TextView
+        android:id="@+id/tv_leavetype"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+            android:layout_weight="1"
+        android:text="Leave Type"
+            android:textSize="12dp"
+
+
+        ></TextView>
+    <TextView
+        android:id="@+id/tv_leavetype_value"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textSize="12dp"
+        android:text="Medical leave"
+
+
+
+        ></TextView>
+    </LinearLayout>
+        <LinearLayout
+            android:id="@+id/line_below_leave_type"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/md_grey_500"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp"
+            />
+    </LinearLayout>
+
+    <!--Date layout-->
+    <LinearLayout
+        android:id="@+id/ll_date_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ll_leavetype_layout">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/tv_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="12dp"
+                android:text="Date"
+
+
+                ></TextView>
+            <TextView
+                android:id="@+id/tv_date_value"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="12dp"
+                android:text="April 15,2024 - April 18,2024"
+
+
+
+                ></TextView>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/line_below_date"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/md_grey_500"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp"
+            />
+    </LinearLayout>
+
+
+    <!--Reason layout-->
+    <LinearLayout
+        android:id="@+id/ll_reason_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ll_date_layout">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/tv_reason"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="12dp"
+                android:text="Reason"
+
+
+                ></TextView>
+            <TextView
+                android:id="@+id/tv_reason_value"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="12dp"
+                android:text="I need to take a medical leave.I need to take a medical leave."
+
+
+
+                ></TextView>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/line_reason_date"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/md_grey_500"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp"
+            />
+    </LinearLayout>
+
+
+    <!--Applied on layout-->
+    <LinearLayout
+        android:id="@+id/ll_appliedon_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ll_reason_layout">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/tv_applied_on"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="12dp"
+                android:text="Applied on"
+
+
+                ></TextView>
+            <TextView
+                android:id="@+id/tv_applied_on_value"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="12dp"
+                android:text="February 20,2023"
+
+
+
+                ></TextView>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/line_applied_on_date"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/md_grey_500"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp"
+            />
+    </LinearLayout>
+
+
+
+    <!--Contact number layout-->
+    <LinearLayout
+        android:id="@+id/ll_contact_number_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ll_appliedon_layout">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/tv_contact_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="12dp"
+                android:text="Contact Number"
+
+
+                ></TextView>
+            <TextView
+                android:id="@+id/tv_contact_number_value"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="12dp"
+                android:text="(605) 555-0123"
+
+
+
+                ></TextView>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/line_contact_number"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/md_grey_500"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp"
+            />
+    </LinearLayout>
+
+
+    <!--Status layout-->
+    <LinearLayout
+        android:id="@+id/ll_status_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ll_contact_number_layout">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/tv_status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="12dp"
+                android:text="Status"
+
+
+                ></TextView>
+            <TextView
+                android:id="@+id/tv_status_value"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="12dp"
+                android:text="Pending"
+
+
+
+                ></TextView>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/line_status"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/md_grey_500"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp"
+            />
+    </LinearLayout>
+
+
+    <!--Approved by layout-->
+    <LinearLayout
+        android:id="@+id/ll_approved_by_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ll_status_layout">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/tv_approved_by"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="12dp"
+                android:text="Approved By"
+
+
+                ></TextView>
+            <TextView
+                android:id="@+id/tv_approved_by_value"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="12dp"
+                android:text="Michael Mitc"
+
+
+
+                ></TextView>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/line_approved_by"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:visibility="gone"
+            android:background="@color/md_grey_500"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp"
+            />
+    </LinearLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button1"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:text="Reject"
+        app:backgroundTint="@color/md_red_300"
+        app:cornerRadius="8dp"
+        app:icon="@drawable/ic_cancel_clsoe"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ll_approved_by_layout" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button2"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:text="Accept"
+        app:backgroundTint="@color/md_green_300"
+        app:cornerRadius="8dp"
+        app:icon="@drawable/ic__circle_check_right"
+        app:iconPadding="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/ll_approved_by_layout" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+</layout>
