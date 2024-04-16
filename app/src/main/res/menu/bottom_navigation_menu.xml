@@ -1,0 +1,16 @@
+<!-- bottom_navigation_menu.xml -->
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/dashboardFragment"
+        android:icon="@drawable/baseline_account_tree_24"
+        android:title="@string/menu_dashboard" />
+    <item
+        android:id="@+id/leaveFragment"
+        android:icon="@drawable/baseline_analytics_24"
+        android:title="@string/menu_leave" />
+
+    <item
+        android:id="@+id/employeeFragment"
+        android:icon="@drawable/baseline_airplay_24"
+        android:title="@string/menu_employee" />
+</menu>

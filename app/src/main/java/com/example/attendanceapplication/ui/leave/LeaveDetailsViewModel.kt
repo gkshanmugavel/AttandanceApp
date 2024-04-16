@@ -9,4 +9,7 @@ import javax.inject.Inject
 class LeaveDetailsViewModel @Inject constructor() : ViewModel() {
     var date = MutableLiveData("")
     var endDate = MutableLiveData("")
+    var title = MutableLiveData("")
+    var phoneNumber = MutableLiveData("")
+    var reason = MutableLiveData("")
 }

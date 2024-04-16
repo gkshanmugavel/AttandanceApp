@@ -6,17 +6,16 @@ import dagger.hilt.android.HiltAndroidApp
 
 
 @HiltAndroidApp
-class AttandanceApplication : Application() {
-
+class AttendanceApplication : Application() {
     override fun onCreate() {
         super.onCreate()
-        appInstance = this@AttandanceApplication
+        appInstance = this@AttendanceApplication
         AppPref.init(this)
     }
 
     companion object {
-        var appInstance: AttandanceApplication? = null
-        fun getInstance(): AttandanceApplication? {
+        var appInstance: AttendanceApplication? = null
+        fun getInstance(): AttendanceApplication? {
             return appInstance
         }
     }

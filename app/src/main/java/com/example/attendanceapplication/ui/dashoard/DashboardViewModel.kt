@@ -1,4 +1,4 @@
-package com.example.attendanceapplication
+package com.example.attendanceapplication.ui.dashoard
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
